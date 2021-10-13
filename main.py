@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import messagebox as msg
 from KEEpydb import KEEpydb
-
+from PIL import ImageTk, Image
 
 class All_FUNCTION:
     def about(self):
@@ -27,11 +27,11 @@ class Main(All_FUNCTION):
         self.root.geometry('500x500')
         self.root.config(bg=self.yellow)
         self.root.title('rajat')
-
         #database initialise
         self.query=KEEpydb.query('bakeryshop','rajat','rajat@143')
         
         #load items
+        self.img=ImageTk.PhotoImage(Image.open('bakeryimg\\rajat.jpg').resize((800,700), Image.ANTIALIAS))
         self.items={
             "white forest1 kg": [10,400],
             "black forest1 kg": [10,350],
@@ -55,6 +55,9 @@ class Main(All_FUNCTION):
     def home(self):
         frame=Frame(self.root,width=self.width,
                     height=self.height,bg='white').place(x=0,y=0)
+        a=Label(frame,image=self.img)
+        a.image=self.img
+        a.place(x=-100,y=-100)
         Label(frame,text='SRI GANESH BAKERY  !',font='verdana 20 bold',bg=self.yellow).place(x=20,y=50)
         Button(frame,text='  ABOUT',bg='white',padx=50,command=self.about).place(x=50,y=150)
         Button(frame,text='BUY',bg='white',padx=60,command=self.showitems).place(x=50,y=190)
@@ -62,7 +65,7 @@ class Main(All_FUNCTION):
         Button(frame,text='PAYMENT',bg='white',padx=45).place(x=50,y=270)
         Button(frame,text='CUSTOMER DETAILS',bg='white',padx=20).place(x=50,y=310)
         Button(frame,text='EXIT',bg='white',padx=57).place(x=50,y=350)
-
+        
     def showitems(self):
         frame=Frame(self.root,width=self.width,
                     height=self.height,bg='white').place(x=0,y=0)
@@ -72,8 +75,8 @@ class Main(All_FUNCTION):
         for i in self.items.keys():
             l.insert(END,i)
 
-        Button(frame,text='Add TO Cart',bg='dodger blue').place(x=300,y=50,width=100)
-        Button(frame,text='Next',bg='dodger blue',command=self.bookings).place(x=300,y=80,width=100)
+        Button(frame,text='Add TO Cart',bg='yellow').place(x=300,y=50,width=100)
+        Button(frame,text='Next',bg='yellow',command=self.bookings).place(x=300,y=80,width=100)
     
     def bookings(self):
         frame=Frame(self.root,width=self.width,
@@ -105,3 +108,4 @@ if __name__=='__main__':
     root=Tk()
     Main(root)
     root.mainloop()
+
