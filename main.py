@@ -56,12 +56,12 @@ class Main(All_FUNCTION):
         frame=Frame(self.root,width=self.width,
                     height=self.height,bg='white').place(x=0,y=0)
         Label(frame,text='SRI GANESH BAKERY  !',font='verdana 20 bold',bg=self.yellow).place(x=20,y=50)
-        Button(frame,text='  ABOUT',bg='dodger blue',command=self.about).place(x=50,y=150)
-        Button(frame,text='BUY',bg='dodger blue',command=self.showitems).place(x=50,y=190)
-        Button(frame,text='ITEMS',bg='dodger blue',command=self.showitems).place(x=50,y=230)
-        Button(frame,text='PAYMENT',bg='dodger blue').place(x=50,y=270)
-        Button(frame,text='CUSTOMER DETAILS',bg='dodger blue').place(x=50,y=310)
-        Button(frame,text='EXIT',bg='dodger blue').place(x=50,y=350)
+        Button(frame,text='  ABOUT',bg='white',padx=50,command=self.about).place(x=50,y=150)
+        Button(frame,text='BUY',bg='white',padx=60,command=self.showitems).place(x=50,y=190)
+        Button(frame,text='ITEMS',bg='white',padx=54,command=self.showitems).place(x=50,y=230)
+        Button(frame,text='PAYMENT',bg='white',padx=45).place(x=50,y=270)
+        Button(frame,text='CUSTOMER DETAILS',bg='white',padx=20).place(x=50,y=310)
+        Button(frame,text='EXIT',bg='white',padx=57).place(x=50,y=350)
 
     def showitems(self):
         frame=Frame(self.root,width=self.width,
