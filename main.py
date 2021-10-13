@@ -58,7 +58,7 @@ class Main(All_FUNCTION):
         a=Label(frame,image=self.img)
         a.image=self.img
         a.place(x=-100,y=-100)
-        Label(frame,text='SRI GANESH BAKERY  !',font='verdana 20 bold',bg=self.yellow).place(x=20,y=50)
+        Label(frame,text='SRI GANESH BAKERY  !',font='verdana 20 bold',bg=self.yellow).place(x=20,y=70)
         Button(frame,text='  ABOUT',bg='white',padx=50,command=self.about).place(x=50,y=150)
         Button(frame,text='BUY',bg='white',padx=60,command=self.showitems).place(x=50,y=190)
         Button(frame,text='ITEMS',bg='white',padx=54,command=self.showitems).place(x=50,y=230)
@@ -67,6 +67,7 @@ class Main(All_FUNCTION):
         Button(frame,text='EXIT',bg='white',padx=57).place(x=50,y=350)
         
     def showitems(self):
+        self.img=ImageTk.PhotoImage(Image.open('bakeryimg\\i.jpg').resize((800,700), Image.ANTIALIAS))
         frame=Frame(self.root,width=self.width,
                     height=self.height,bg='white').place(x=0,y=0)
         l=Listbox(frame)
@@ -108,4 +109,3 @@ if __name__=='__main__':
     root=Tk()
     Main(root)
     root.mainloop()
-
