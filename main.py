@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox as msg
-from KEEpydb import KEEpydb
+#from KEEpydb import KEEpydb
 from PIL import ImageTk, Image
 
 class All_FUNCTION:
@@ -66,6 +66,8 @@ class Main(All_FUNCTION):
         Button(frame,text='CUSTOMER DETAILS',bg='white',padx=20).place(x=50,y=310)
         Button(frame,text='EXIT',bg='white',padx=57).place(x=50,y=350)
         
+    def about(self):
+        msgbox.showinfo('notify','developer RAJAT')
     def showitems(self):
         self.img=ImageTk.PhotoImage(Image.open('bakeryimg\\i.jpg').resize((800,700), Image.ANTIALIAS))
         frame=Frame(self.root,width=self.width,
